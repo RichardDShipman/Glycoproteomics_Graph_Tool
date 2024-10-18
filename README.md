@@ -7,6 +7,10 @@ Richard Shipman -- 13AUG2024, Released: 18OCT2024
 
 This GlycoproteomicsGraphTool_release repository serves as the core module in the glycoproteomics knowledge graph. The primary purpose of this graph is to store glycoproteomic (glycoconjugates) records in relationship to common biological entities and processes. The development of this graph was inspired by the GlyGen workshop titled GlyGen Virtual Training Workshop 2024. (https://wiki.glygen.org/GlyGen_CFDE_Biocuration2024_Workshop) GlyGen also serves as a data source for the glycoproteomics data used in this knowledge graph.
 
+![Graph Data Model](/examples/CoreGraphDataModel.png)
+
+Graph data model of the GlycoproteomicsGraphTool_release made with the Neo4j provide Arrows.app tool. (https://arrows.app)
+
 ## Introduction
 
 The Glycoproteomics Graph Tool leverages Neo4j, a graph database management system, to construct a comprehensive and interactive graph model based on GlyGen data. (https://www.glygen.org/) GlyGen is a data integration and dissemination project for glycomics and glycobiology research, providing extensive datasets on glycans, proteins, genes, and associated biological entities. At the moment, the graph stores glycoproteomics related data from humans and mice.
