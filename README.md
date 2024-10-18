@@ -5,7 +5,7 @@ Richard Shipman -- 13AUG2024, Released: 18OCT2024
 
 - (https://github.com/RichardDShipman)
 
-This Neo4j graph database will serve as the core module in the glycoproteomics knowledge graph. The primary purpose of this graph is to store glycoproteomic (glycoconjugates) records in relationship to common biological entities and processes. The development of this graph was inspired by the GlyGen workshop titled GlyGen Virtual Training Workshop 2024. (https://wiki.glygen.org/GlyGen_CFDE_Biocuration2024_Workshop) GlyGen also serves as a data source for the glycoproteomics data used in this knowledge graph.
+This GlycoproteomicsGraphTool_release repository serves as the core module in the glycoproteomics knowledge graph. The primary purpose of this graph is to store glycoproteomic (glycoconjugates) records in relationship to common biological entities and processes. The development of this graph was inspired by the GlyGen workshop titled GlyGen Virtual Training Workshop 2024. (https://wiki.glygen.org/GlyGen_CFDE_Biocuration2024_Workshop) GlyGen also serves as a data source for the glycoproteomics data used in this knowledge graph.
 
 ## Introduction
 
