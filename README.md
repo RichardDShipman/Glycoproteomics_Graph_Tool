@@ -1,7 +1,7 @@
 # GlycoproteomicsGraphTool_release
 Neo4j-based Glycoproteomics Graph Tool
 
-Richard Shipman -- 13AUG2024, Release: 18 OCT 2024
+Richard Shipman -- 13AUG2024, Released: 18OCT2024
 
 - (https://github.com/RichardDShipman)
 
