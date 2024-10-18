@@ -132,6 +132,28 @@ g.ensembl_gene_id	p.uniprotkb_canonical_ac	p.gene_name	g.chromosome_id	g.start_p
 
 "ENSG00000126091"	"Q11203-1"	"ST3GAL3"	"1"	"43705824"	"Homo sapiens"
 
+- Which glycans are associated with protein uniprot accession P00450-1 (Ceruloplasmin)?
+
+```cypher
+MATCH x=(p:Protein{uniprotkb_canonical_ac:'P00450-1'})--(gs:GlycosylationSite)--(gc:Glycoconjugate)--(g:Glycan)
+RETURN g.glytoucan_ac 
+```
+
+![Alt text](/examples/graph4.png)
+
+g.glytoucan_ac
+
+"G00912UN"
+
+"G94917XT"
+
+"G88374WZ"
+
+"G10486CT"
+
+"G15038BD"
+...
+
 # Reference Source Materials 
 
 GlyGen: Computational and Informatics Resources for Glycoscience, Glycobiology, Volume 30, Issue 2, February 2020, Pages 72–73, https://doi.org/10.1093/glycob/cwz080
