@@ -32,7 +32,9 @@ Extract the contents of the ZIP file (graph_data.zip). Move all the CSV files in
 Or add the following parameters to your neo4j.config file with a text editor at the bottom of the file:
 
 dbms.memory.heap.initial_size=2G
+
 dbms.memory.heap.max_size=8G
+
 dbms.memory.pagecache.size=4G
 
 Note: System requirements: 8Gb+ RAM.
