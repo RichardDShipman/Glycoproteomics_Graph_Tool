@@ -66,7 +66,7 @@ RETURN p;
 
 ![Alt text](/examples/graph1.png)
 
-- of a set of glycans from a glycoproteins collection of glycans
+- Which enzymes synthesize this set of glycans?
 
 ```cypher
 UNWIND ["G00025YC", "G00026MO", "G00030MO"] AS value
@@ -76,7 +76,7 @@ return path limit 100
 ```
 ![Alt text](/examples/graph2.png)
 
-- Greater than 2 dHex in composition. dHex =< 2 
+- Greater than 2 dHex in composition. dHex =< 2. 
 
 ```cypher
 UNWIND ["2", "3", "4", "5"] AS value
@@ -121,19 +121,16 @@ g.start_pos;
 ```
 
 g.ensembl_gene_id	p.uniprotkb_canonical_ac	p.gene_name	g.chromosome_id	g.start_pos	g.species
+
 "ENSG00000158850"	"O60512-1"	"B4GALT3"	"1"	"161171310"	"Homo sapiens"
+
 "ENSG00000162630"	"O43825-1"	"B3GALT2"	"1"	"193178730"	"Homo sapiens"
+
 "ENSG00000143641"	"Q10471-1"	"GALNT2"	"1"	"230057990"	"Homo sapiens"
+
 "ENSG00000184389"	"U3KPV4-1"	"A3GALT2"	"1"	"33306766"	"Homo sapiens"
+
 "ENSG00000126091"	"Q11203-1"	"ST3GAL3"	"1"	"43705824"	"Homo sapiens"
-
-- "What are all the paths starting from a Gene with the symbol ‘ATRN’ and ending at any Monosaccharide, including all intermediate nodes and relationships between two Glycan nodes, limited to 100 results?”
-
-```cypher
-MATCH x=(n:Gene{gene_symbol:'ATRN'})--(p:Protein)--(gs:GlycosylationSite)--(gc:Glycoconjugate)--(gl:Glycan)--(gl2:Glycan)--(m:Monosaccharide)-[l:linkage*]-() RETURN x limit 100
-```
-
-![Alt text](/examples/graph4.png)
 
 # Reference Source Materials 
 
