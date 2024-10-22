@@ -64,6 +64,15 @@ Use the following use cases and test examples to explore the knowledge graph.
 
 ## Use Cases and Test Examples
 
+- Display groups of glycans that are related to one another by composition and structure and display monosaccharide and has linkage subgraph.
+
+```
+MATCH p=(g1:Glycan)-[r:has]-(g2:Glycan)-[r1:has_structure]-()-[r2:linkage*]-() 
+RETURN p LIMIT 100
+```
+
+![Alt text](/examples/graph0.png)
+
 - Test the following cypher to see if glycan to monosaccharide relationships loaded properly. 
 
 ```cypher
