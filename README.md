@@ -174,3 +174,6 @@ g.glytoucan_ac
 
 GlyGen: Computational and Informatics Resources for Glycoscience, Glycobiology, Volume 30, Issue 2, February 2020, Pages 72–73, https://doi.org/10.1093/glycob/cwz080
 
+## License
+
+This project is licensed under the GNU GENERAL PUBLIC LICENSE.
