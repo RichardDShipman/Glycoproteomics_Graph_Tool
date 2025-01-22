@@ -1,4 +1,4 @@
-# GlycoproteomicsGraphTool_release
+# Glycoproteomics_Graph_Tool
 
 Richard Shipman -- 13AUG2024, Released: 18OCT2024
 
@@ -12,7 +12,7 @@ The Glycoproteomics Graph Tool was developed to create a centralized graph datab
 
 Graphs are an ideal approach because glycoproteomics sits at the intersection of multiple omics fields (proteomics, genomics, glycomics). This graph tool allows for the integration of multi-omics data, enabling the representation of biological knowledge in a contextualized manner. It facilitates the study of glycoconjugates (glycopeptides) and their connections to key biological entities, enhancing our understanding of glycosylation and its implications in health and disease. The structure makes it highly suitable for future applications in machine learning and artificial intelligence, where understanding relationships between biological components is key.
 
-This GlycoproteomicsGraphTool_release repository serves as the core module in the construction of a glycoproteomics knowledge graph. The primary purpose of this graph is to store glycoproteomic (glycoconjugates) records in relationship to common biological entities and processes. The development of this graph was inspired by the GlyGen workshop titled GlyGen Virtual Training Workshop 2024. (https://wiki.glygen.org/GlyGen_CFDE_Biocuration2024_Workshop) GlyGen data repository also serves as a data source for the glycoproteomics data used in the construction of this knowledge graph.
+This Glycoproteomics_Graph_Tool repository serves as the core module in the construction of a glycoproteomics knowledge graph. The primary purpose of this graph is to store glycoproteomic (glycoconjugates) records in relationship to common biological entities and processes. The development of this graph was inspired by the GlyGen workshop titled GlyGen Virtual Training Workshop 2024. (https://wiki.glygen.org/GlyGen_CFDE_Biocuration2024_Workshop) GlyGen data repository also serves as a data source for the glycoproteomics data used in the construction of this knowledge graph.
 
 ![Graph Data Model](/examples/CoreGraphDataModel.png)
 
