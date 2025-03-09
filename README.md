@@ -170,7 +170,78 @@ g.glytoucan_ac
 "G15038BD"
 ...
 
+# Dockerfile
+
+Docker Setup for Neo4j Graph Database
+
+1. Unzip the Data Files
+
+First, unzip the graph_data.zip. This zip file contains the necessary Cypher statements and CSV files required for the data loading step.
+
+```shell
+unzip graph_data.zip
+```
+
+2. Build the Docker Image
+
+To build the Docker image for Neo4j, use the following command:
+
+```shell
+docker build -t glyco-neo4j .
+```
+3. Run the Docker Image
+
+Once the image is built, you can run the container with the following command:
+
+```shell
+docker run -d \
+  --name glyco-neo4j \
+  -p7474:7474 -p7687:7687 \
+  -v "$(pwd)/data":/var/lib/neo4j/import \
+  -v neo4j-data:/data \
+  glyco-neo4j
+  ```
+
+- This command maps ports 7474 and 7687 for the Neo4j browser and bolt connection.
+- It also mounts the data directory on your local machine to the container’s Neo4j import directory.
+
+4. Run the Docker Image Using Docker Compose
+
+Alternatively, you can use Docker Compose to simplify running the container:
+
+```shell
+docker compose up -d
+```
+To stop the container, use:
+
+```shell
+docker compose down
+```
+
+5. Access Neo4j Through the Browser
+
+After starting the container, you can access the Neo4j browser interface at:
+
+[Neo4j Web Broswer Link](http://localhost:7474/browser/)
+
+6. Execute Cypher Queries
+
+To execute Cypher queries from your core_graph_statements.cypher file, use the following command:
+
+```shell
+docker exec -i glyco-neo4j cypher-shell -u neo4j -p your_password --file /var/lib/neo4j/import/core_graph_statements.cypher
+```
+
+- Make sure to replace your_password with the actual password for your Neo4j instance.
+
+```yaml
+    environment:
+      - NEO4J_AUTH=neo4j/your_password  # Set username and password
+```
+
 # Reference Source Materials 
+
+Neo4j Graph Databases: [Link](https://neo4j.com/)
 
 GlyGen: Computational and Informatics Resources for Glycoscience, Glycobiology, Volume 30, Issue 2, February 2020, Pages 72–73, https://doi.org/10.1093/glycob/cwz080
 

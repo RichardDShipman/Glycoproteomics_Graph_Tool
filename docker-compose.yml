@@ -1,0 +1,18 @@
+services:
+  neo4j:
+    image: neo4j:5.12-community
+    container_name: glyco-neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - ./graph_data:/var/lib/neo4j/import       # Map host ./graph_data folder to container import directory
+      - ./conf:/var/lib/neo4j/conf         # Optional custom config directory
+      - neo4j-data:/data                   # Persistent data storage
+    environment:
+      - NEO4J_AUTH=neo4j/your_password  # Set username and password
+      - NEO4J_dbms_memory_heap_initial__size=1G
+      - NEO4J_dbms_memory_heap_max__size=4G
+      - NEO4J_dbms_memory_pagecache_size=2G
+volumes:
+  neo4j-data:
