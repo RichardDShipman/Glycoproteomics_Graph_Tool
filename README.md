@@ -32,9 +32,17 @@ This graph acts as a core for glycoproteomics projects, with GlyGen as the prima
 
 # Step-by-Step User Guide
 
-1. Download the GlycoproteomicsGraphTool_release github repository with required ZIP File containing CSVs and neo4j.config.
+1. Clone the Glycoproteomics_Graph_Tool github repository with required ZIP File containing CSVs, Cypher statements, and neo4j.config.
+
+```shell
+git clone https://github.com/RichardDShipman/Glycoproteomics_Graph_Tool.git
+```
 
 2. Extract and Place CSV Files in the Import Folder of your Neo4j Database
+
+```shell
+unzip graph_data.zip
+```
 
 Extract the contents of the ZIP file (graph_data.zip). Move all the CSV files into the import directory of your Neo4j database. The import directory is typically located within the Neo4j installation directory. This step is crucial for Neo4j to access the data files directly. 
 
@@ -54,7 +62,7 @@ Note: System requirements: 8Gb+ RAM.
 
 Open the Neo4j browser from the App or the web.
 
-- http://localhost:7474/browser/
+- (http://localhost:7474/browser/)
 
 Follow the order of the Cypher queries as outlined in the Cypher file (core_graph_statements.cypher). Each section corresponds to a specific type of node or relationship within the graph model. Execute these queries in your Neo4j browser or using a Neo4j client.
 
