@@ -12,6 +12,7 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (p:Protein) REQUIRE p.uniprotkb_canonical_ac
 CREATE CONSTRAINT IF NOT EXISTS FOR (p:Enzyme) REQUIRE p.uniprotkb_canonical_ac IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (g:GlycosylationSite) REQUIRE g.protein_glycosylation_site IS UNIQUE;
 CREATE CONSTRAINT IF NOT EXISTS FOR (gc:Glycoconjugate) REQUIRE gc.glycoconjugate_sequence IS UNIQUE;
+CREATE CONSTRAINT IF NOT EXISTS FOR (go:GeneOntology) REQUIRE go.go_term_id IS UNIQUE;
 
 // PROTEIN NODES AND RELATIONSHIPS
 
@@ -446,3 +447,73 @@ ON CREATE SET
 ON MATCH SET
     r1.glycan_xref_key = row.glycan_xref_key,
     r1.composition = row.composition;
+
+// GO - GENE ONTOLOGY NODES AND RELATIONSHIPS
+
+LOAD CSV WITH HEADERS FROM 'file:///human_protein_go_annotation.csv' AS row
+MERGE (n:GeneOntology {go_term_id: row.go_term_id})
+ON CREATE SET
+    n.go_term_label = row.go_term_label,
+    n.go_term_category = row.go_term_category,
+    n.eco_id = row.eco_id,
+    n.pmid = row.pmid
+ON MATCH SET
+    n.go_term_label = row.go_term_label,
+    n.go_term_category = row.go_term_category,
+    n.eco_id = row.eco_id,
+    n.pmid = row.pmid;
+
+LOAD CSV WITH HEADERS FROM 'file:///mouse_protein_go_annotation.csv' AS row
+MERGE (n:GeneOntology {go_term_id: row.go_term_id})
+ON CREATE SET
+    n.go_term_label = row.go_term_label,
+    n.go_term_category = row.go_term_category,
+    n.eco_id = row.eco_id,
+    n.pmid = row.pmid
+ON MATCH SET
+    n.go_term_label = row.go_term_label,
+    n.go_term_category = row.go_term_category,
+    n.eco_id = row.eco_id,
+    n.pmid = row.pmid;
+
+LOAD CSV WITH HEADERS FROM 'file:///human_protein_go_annotation.csv' AS row 
+// Filter rows where go_term_category is 'molecular_function'
+WITH row WHERE row.go_term_category = 'molecular_function'
+MATCH (n1:Protein {uniprotkb_canonical_ac: row.uniprotkb_canonical_ac})
+MATCH (n2:GeneOntology {go_term_id: row.go_term_id})
+MERGE (n1)-[r1:has_function]->(n2);
+
+LOAD CSV WITH HEADERS FROM 'file:///human_protein_go_annotation.csv' AS row 
+// Filter rows where go_term_category is 'biological_process'
+WITH row WHERE row.go_term_category = 'biological_process'
+MATCH (n1:Protein {uniprotkb_canonical_ac: row.uniprotkb_canonical_ac})
+MATCH (n2:GeneOntology {go_term_id: row.go_term_id})
+MERGE (n1)-[r1:involved_in]->(n2);
+
+LOAD CSV WITH HEADERS FROM 'file:///human_protein_go_annotation.csv' AS row 
+// Filter rows where go_term_category is 'cellular_component'
+WITH row WHERE row.go_term_category = 'cellular_component'
+MATCH (n1:Protein {uniprotkb_canonical_ac: row.uniprotkb_canonical_ac})
+MATCH (n2:GeneOntology {go_term_id: row.go_term_id})
+MERGE (n1)-[r1:located_in]->(n2);
+
+LOAD CSV WITH HEADERS FROM 'file:///mouse_protein_go_annotation.csv' AS row 
+// Filter rows where go_term_category is 'molecular_function'
+WITH row WHERE row.go_term_category = 'molecular_function'
+MATCH (n1:Protein {uniprotkb_canonical_ac: row.uniprotkb_canonical_ac})
+MATCH (n2:GeneOntology {go_term_id: row.go_term_id})
+MERGE (n1)-[r1:has_function]->(n2);
+
+LOAD CSV WITH HEADERS FROM 'file:///mouse_protein_go_annotation.csv' AS row 
+// Filter rows where go_term_category is 'biological_process'
+WITH row WHERE row.go_term_category = 'biological_process'
+MATCH (n1:Protein {uniprotkb_canonical_ac: row.uniprotkb_canonical_ac})
+MATCH (n2:GeneOntology {go_term_id: row.go_term_id})
+MERGE (n1)-[r1:involved_in]->(n2);
+
+LOAD CSV WITH HEADERS FROM 'file:///mouse_protein_go_annotation.csv' AS row 
+// Filter rows where go_term_category is 'cellular_component'
+WITH row WHERE row.go_term_category = 'cellular_component'
+MATCH (n1:Protein {uniprotkb_canonical_ac: row.uniprotkb_canonical_ac})
+MATCH (n2:GeneOntology {go_term_id: row.go_term_id})
+MERGE (n1)-[r1:located_in]->(n2);

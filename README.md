@@ -4,9 +4,9 @@ Richard Shipman -- 13AUG2024, Released: 18OCT2024
 
 - (https://github.com/RichardDShipman)
 
-# Neo4j Graph Database Based Glycoproteomics Graph Tool (release)
+# Glycoproteomics Graph Tool
 
-The Glycoproteomics Graph Tool was developed to create a centralized graph database that captures the intricate relationships in glycoproteomics, linking glycan structures, proteins, genes, and biological processes. By leveraging Neo4j and integrating public data from GlyGen, this tool models glycoproteomics data in a graph format, making it easier to explore and analyze the complex biological interactions of glycoeptides within the context of the proteome, glycome, and beyond.
+The Glycoproteomics Graph Tool was developed using Neo4j to create a centralized graph database that captures the intricate relationships in glycoproteomics, linking glycan structures, proteins, genes, and biological processes. By leveraging Neo4j and integrating public data from GlyGen, this tool models glycoproteomics data in a graph format, making it easier to explore and analyze the complex biological interactions of glycoeptides within the context of the proteome, glycome, glycoproteome, and beyond.
 
 ## Why Use Graphs for Glycoproteomics?
 
@@ -195,7 +195,7 @@ unzip graph_data.zip
 To build the Docker image for Neo4j, use the following command:
 
 ```shell
-docker build -t glyco-neo4j .
+docker build -t glycoproteomics-graph-tool .
 ```
 3. Run the Docker Image
 
@@ -207,7 +207,7 @@ docker run -d \
   -p7474:7474 -p7687:7687 \
   -v "$(pwd)/data":/var/lib/neo4j/import \
   -v neo4j-data:/data \
-  glyco-neo4j
+  glycoproteomics-graph-tool
   ```
 
 - This command maps ports 7474 and 7687 for the Neo4j browser and bolt connection.
@@ -236,8 +236,10 @@ After starting the container, you can access the Neo4j browser interface at:
 
 To execute Cypher queries from your core_graph_statements.cypher file, use the following command:
 
+Or paste them in the browser query window if missing file errors occur.
+
 ```shell
-docker exec -i glyco-neo4j cypher-shell -u neo4j -p your_password --file /var/lib/neo4j/import/core_graph_statements.cypher
+docker exec -i glycoproteomics-graph-tool cypher-shell -u neo4j -p your_password --file /var/lib/neo4j/import/core_graph_statements_docker.cypher
 ```
 
 - Make sure to replace your_password with the actual password for your Neo4j instance.
@@ -249,9 +251,11 @@ docker exec -i glyco-neo4j cypher-shell -u neo4j -p your_password --file /var/li
 
 # Reference Source Materials 
 
-Neo4j Graph Databases: [Link](https://neo4j.com/)
+- Neo4j Graph Databases: [Link](https://neo4j.com/)
 
-GlyGen: Computational and Informatics Resources for Glycoscience, Glycobiology, Volume 30, Issue 2, February 2020, Pages 72–73, https://doi.org/10.1093/glycob/cwz080
+- GlyGen: Computational and Informatics Resources for Glycoscience, Glycobiology, Volume 30, Issue 2, February 2020, Pages 72–73, https://doi.org/10.1093/glycob/cwz080
+
+- Ashburner, Michael, Catherine A. Ball, Judith A. Blake, David Botstein, Heather Butler, J. Michael Cherry, Allan P. Davis, et al. “Gene Ontology: Tool for the Unification of Biology.” Nature Genetics 25, no. 1 (May 2000): 25–29. https://doi.org/10.1038/75556.
 
 ## License
 

@@ -1,0 +1,359 @@
+{
+  "style": {
+    "font-family": "sans-serif",
+    "background-color": "#ffffff",
+    "background-image": "",
+    "background-size": "100%",
+    "node-color": "#ffffff",
+    "border-width": 4,
+    "border-color": "#000000",
+    "radius": 50,
+    "node-padding": 5,
+    "node-margin": 2,
+    "outside-position": "auto",
+    "node-icon-image": "",
+    "node-background-image": "",
+    "icon-position": "inside",
+    "icon-size": 64,
+    "caption-position": "inside",
+    "caption-max-width": 200,
+    "caption-color": "#000000",
+    "caption-font-size": 50,
+    "caption-font-weight": "normal",
+    "label-position": "inside",
+    "label-display": "pill",
+    "label-color": "#000000",
+    "label-background-color": "#ffffff",
+    "label-border-color": "#000000",
+    "label-border-width": 4,
+    "label-font-size": 40,
+    "label-padding": 5,
+    "label-margin": 4,
+    "directionality": "directed",
+    "detail-position": "inline",
+    "detail-orientation": "parallel",
+    "arrow-width": 5,
+    "arrow-color": "#000000",
+    "margin-start": 5,
+    "margin-end": 5,
+    "margin-peer": 20,
+    "attachment-start": "normal",
+    "attachment-end": "normal",
+    "relationship-icon-image": "",
+    "type-color": "#000000",
+    "type-background-color": "#ffffff",
+    "type-border-color": "#000000",
+    "type-border-width": 0,
+    "type-font-size": 16,
+    "type-padding": 5,
+    "property-position": "outside",
+    "property-alignment": "colon",
+    "property-color": "#000000",
+    "property-font-size": 16,
+    "property-font-weight": "normal"
+  },
+  "nodes": [
+    {
+      "id": "n0",
+      "position": {
+        "x": -197.59891425106315,
+        "y": -172.30951842990697
+      },
+      "caption": "Organism",
+      "labels": [
+        "Organism"
+      ],
+      "properties": {
+        "taxid": ""
+      },
+      "style": {}
+    },
+    {
+      "id": "n1",
+      "position": {
+        "x": -320.2017243705617,
+        "y": 40.04477784778433
+      },
+      "caption": "Gene",
+      "labels": [
+        "Gene"
+      ],
+      "properties": {
+        "ensembl_gene_id": ""
+      },
+      "style": {}
+    },
+    {
+      "id": "n3",
+      "position": {
+        "x": -34.89875126773419,
+        "y": 40.78303422835148
+      },
+      "caption": "Protein",
+      "labels": [
+        "Protein"
+      ],
+      "properties": {
+        "uniprotkb_canonical_ac": ""
+      },
+      "style": {}
+    },
+    {
+      "id": "n4",
+      "position": {
+        "x": 560.6023743367906,
+        "y": 40.04477784778613
+      },
+      "caption": "Glycan",
+      "labels": [
+        "Glycan"
+      ],
+      "properties": {
+        "glytoucan_ac": ""
+      },
+      "style": {}
+    },
+    {
+      "id": "n5",
+      "position": {
+        "x": 195.91436912474865,
+        "y": 440.5630858016437
+      },
+      "caption": "Enzyme",
+      "labels": [
+        "Enzyme"
+      ],
+      "properties": {
+        "uniprotkb_canonical_ac": ""
+      },
+      "style": {}
+    },
+    {
+      "id": "n6",
+      "position": {
+        "x": 195.91436912474865,
+        "y": 174.04305141944894
+      },
+      "caption": "Site",
+      "labels": [
+        "Site"
+      ],
+      "properties": {
+        "protein_glycosylation_site": ""
+      },
+      "style": {}
+    },
+    {
+      "id": "n7",
+      "position": {
+        "x": 674.5238462870154,
+        "y": 237.36255533860745
+      },
+      "caption": "Motif",
+      "labels": [
+        "Motif"
+      ],
+      "properties": {
+        "motif_ac": ""
+      },
+      "style": {}
+    },
+    {
+      "id": "n8",
+      "position": {
+        "x": 195.91436912474865,
+        "y": -191.19457506474976
+      },
+      "caption": "Glycoconjugate",
+      "labels": [
+        "Glycoconjugate"
+      ],
+      "properties": {
+        "glycoconjugate_sequence": ""
+      },
+      "style": {}
+    },
+    {
+      "id": "n9",
+      "position": {
+        "x": 437.04249524398864,
+        "y": 299.57449283551796
+      },
+      "caption": "Monosaccharide",
+      "labels": [
+        "Monosaccharide"
+      ],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n10",
+      "position": {
+        "x": -197.59891425106315,
+        "y": 299.57449283551796
+      },
+      "caption": "GeneOntology",
+      "style": {},
+      "labels": [
+        "GeneOntology"
+      ],
+      "properties": {
+        "go_term_id": ""
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "n0",
+      "fromId": "n0",
+      "toId": "n1",
+      "type": "has",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n3",
+      "fromId": "n0",
+      "toId": "n4",
+      "type": "has",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n4",
+      "fromId": "n1",
+      "toId": "n3",
+      "type": "encodes",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n5",
+      "fromId": "n0",
+      "toId": "n3",
+      "type": "has",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n6",
+      "fromId": "n3",
+      "toId": "n4",
+      "type": "binding",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n7",
+      "fromId": "n3",
+      "toId": "n5",
+      "type": "is_a",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n8",
+      "fromId": "n3",
+      "toId": "n6",
+      "type": "has",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n9",
+      "fromId": "n5",
+      "toId": "n4",
+      "type": "synthesizes",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n10",
+      "fromId": "n6",
+      "toId": "n4",
+      "type": "has",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n11",
+      "fromId": "n4",
+      "toId": "n7",
+      "type": "has",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n12",
+      "fromId": "n8",
+      "toId": "n4",
+      "type": "has",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n13",
+      "fromId": "n8",
+      "toId": "n6",
+      "type": "has",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n14",
+      "fromId": "n8",
+      "toId": "n3",
+      "type": "has",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n15",
+      "fromId": "n4",
+      "toId": "n4",
+      "type": "has",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n16",
+      "fromId": "n4",
+      "toId": "n9",
+      "type": "has_structure",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n17",
+      "fromId": "n9",
+      "toId": "n9",
+      "type": "linkage",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n18",
+      "type": "located_in",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n10"
+    },
+    {
+      "id": "n19",
+      "type": "functions_as",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n10"
+    },
+    {
+      "id": "n20",
+      "type": "involved_in",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n10"
+    }
+  ]
+}

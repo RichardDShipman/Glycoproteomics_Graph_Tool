@@ -2,7 +2,8 @@
 FROM neo4j:5.12-community
 
 # Install the Graph Data Science plugin
-#ENV NEO4JLABS_PLUGINS='["graph-data-science"]'
+#ENV NEO4JLABS_PLUGINS='["graph-data-science", "apoc"]'
+#ENV NEO4JLABS_PLUGINS='["apoc"]'
 
 # Set memory configurations (adjust as needed)
 ENV NEO4J_dbms_memory_heap_initial__size=1G
