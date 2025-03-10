@@ -1,4 +1,6 @@
 
 data/.DS_Store
 .DS_Store
-/graph_data/*
+/graph_data/h*
+/graph_data/m*
+/graph_data/g*
