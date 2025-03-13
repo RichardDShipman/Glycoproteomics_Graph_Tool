@@ -186,7 +186,7 @@ WITH row
 WHERE row.xref_id IS NOT NULL
 MATCH (n1:Protein {uniprotkb_canonical_ac: row.uniprotkb_canonical_ac})
 MATCH (n2:ConservedDomain {cdd_id: row.xref_id})
-MERGE (n1)-[r1:HAS]->(n2)
+MERGE (n1)-[r1:CONTAINS]->(n2)
 ON CREATE SET
     r1.cdd_label = row.xref_label
 ON MATCH SET

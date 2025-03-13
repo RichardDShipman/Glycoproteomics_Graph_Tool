@@ -1,8 +1,8 @@
 # Glycoproteomics_Graph_Tool
 
-Richard Shipman -- 13AUG2024, Released: 18OCT2024
+Richard Shipman -- 13AUG2024, Released: 18OCT2024, Updated: 13MAR2025
 
-- (https://github.com/RichardDShipman)
+- More projects on at: (https://github.com/RichardDShipman)
 
 # Glycoproteomics Graph Tool
 
@@ -75,7 +75,7 @@ Use the following use cases and test examples to explore the knowledge graph.
 - Display groups of glycans that are related to one another by composition and structure and display monosaccharide and has linkage subgraph.
 
 ```
-MATCH p=(g1:Glycan)-[r:has]-(g2:Glycan)-[r1:has_structure]-()-[r2:linkage*]-() 
+MATCH p=(g:Glycan)-[r1:HAS_LINKAGE]-()-[r2:LINKAGE*]-() 
 RETURN p LIMIT 100
 ```
 
@@ -84,7 +84,7 @@ RETURN p LIMIT 100
 - Test the following cypher to see if glycan to monosaccharide relationships loaded properly. 
 
 ```cypher
-MATCH p=(g:Glycan {glytoucan_ac: 'G00025HU'})-[r:has_structure]-()-[r2:linkage*]-()
+MATCH p=(g:Glycan {glytoucan_ac: 'G00025HU'})-[r:HAS_LINKAGE]-()-[r2:LINKAGE*]-()
 RETURN p;
 ```
 
@@ -94,8 +94,8 @@ RETURN p;
 
 ```cypher
 UNWIND ["G00025YC", "G00026MO", "G00030MO"] AS value
-MATCH path=(g:Glycan{glytoucan_ac: value})-[]-(e:Enzyme)-[]-(p:Protein)-[]-(ge:Gene)
-return path limit 100
+MATCH PATH=(g:Glycan{glytoucan_ac: value})-[]-(e:Enzyme)-[]-(p:Protein)-[]-(ge:Gene)
+RETURN PATH LIMIT 100
 
 ```
 ![Alt text](/examples/graph2.png)
@@ -105,7 +105,7 @@ return path limit 100
 ```cypher
 UNWIND ["2", "3", "4", "5"] AS value
 MATCH path=(g:Glycan{dHex: value})-[]-(e:Enzyme)-[]-(p:Protein)-[]-(ge:Gene)
-return path limit 100;
+RETURN PATH LIMIT 100;
 
 ```
 
@@ -160,7 +160,10 @@ g.ensembl_gene_id	p.uniprotkb_canonical_ac	p.gene_name	g.chromosome_id	g.start_p
 
 ```cypher
 MATCH x=(p:Protein{uniprotkb_canonical_ac:'P00450-1'})--(gs:GlycosylationSite)--(gc:Glycoconjugate)--(g:Glycan)
-RETURN g.glytoucan_ac 
+RETURN x;
+
+MATCH x=(p:Protein{uniprotkb_canonical_ac:'P00450-1'})--(gs:GlycosylationSite)--(gc:Glycoconjugate)--(g:Glycan)
+RETURN  g.glytoucan_ac;
 ```
 
 ![Alt text](/examples/graph4.png)
@@ -259,7 +262,25 @@ docker exec -it glycoproteomics-graph-tool bash
 
 - GlyGen: Computational and Informatics Resources for Glycoscience, Glycobiology, Volume 30, Issue 2, February 2020, Pages 72–73, https://doi.org/10.1093/glycob/cwz080
 
+- Mazein, Ilya, Adrien Rougny, Alexander Mazein, Ron Henkel, Lea Gütebier, Lea Michaelis, Marek Ostaszewski, et al. “Graph Databases in Systems Biology: A Systematic Review.” Briefings in Bioinformatics 25, no. 6 (November 1, 2024): bbae561. https://doi.org/10.1093/bib/bbae561.
+
 - Ashburner, Michael, Catherine A. Ball, Judith A. Blake, David Botstein, Heather Butler, J. Michael Cherry, Allan P. Davis, et al. “Gene Ontology: Tool for the Unification of Biology.” Nature Genetics 25, no. 1 (May 2000): 25–29. https://doi.org/10.1038/75556.
+
+- Wang J, Chitsaz F, Derbyshire MK, Gonzales NR, Gwadz M, Lu S, Marchler GH, Song JS, Thanki N, Yamashita RA, Yang M, Zhang D, Zheng C, Lanczycki CJ, Marchler-Bauer A.The conserved domain database in 2023. Nucleic Acids Res. 2022 Jan 6;51(D1):D384-D388. doi: 10.1093/nar/gkac1096. [PubMed PMID: 36477806] 
+
+- Mungall, Christopher J., Carlo Torniai, Georgios V. Gkoutos, Suzanna E. Lewis, and Melissa A. Haendel. “Uberon, an Integrative Multi-Species Anatomy Ontology.” Genome Biology 13, no. 1 (January 31, 2012): R5. https://doi.org/10.1186/gb-2012-13-1-r5.
+
+- Schriml LM, Arze C, Nadendla S, Chang YW, Mazaitis M, Felix V, Feng G, Kibbe WA. Disease Ontology: a backbone for disease semantic integration. Nucleic Acids Res. 2012 Jan;40(Database issue):D940-6. doi: 10.1093/nar/gkr972. Epub 2011 Nov 12. PMID: 22080554; PMCID: PMC3245088.
+
+- Patel S, Topping A, Ye X, Zhang H, Canaud B, Carioni P, Marelli C, Guinsburg A, Power A, Duncan N, Kooman J, van der Sande F, Usvyat LA, Wang Y, Xu X, Kotanko P, Raimann JG; the MONDO Initiative. Association between Heights of Dialysis Patients and Outcomes: Results from a Retrospective Cohort Study of the International MONitoring Dialysis Outcomes (MONDO) Database Initiative. Blood Purif. 2018;45(1-3):245-253. doi: 10.1159/000485162. Epub 2018 Jan 26. PMID: 29478048.
+
+- Hamosh A, Scott AF, Amberger J, Valle D, McKusick VA. Online Mendelian Inheritance in Man (OMIM). Hum Mutat. 2000;15(1):57-61. doi: 10.1002/(SICI)1098-1004(200001)15:1<57::AID-HUMU12>3.0.CO;2-G. PMID: 10612823.
+
+- Bastian FB, Roux J, Niknejad A, Comte A, Fonseca Costa SS, de Farias TM, Moretti S, Parmentier G, de Laval VR, Rosikiewicz M, Wollbrett J, Echchiki A, Escoriza A, Gharib WH, Gonzales-Porta M, Jarosz Y, Laurenczy B, Moret P, Person E, Roelli P, Sanjeev K, Seppey M, Robinson-Rechavi M. The Bgee suite: integrated curated expression atlas and comparative transcriptomics in animals. Nucleic Acids Res. 2021 Jan 8;49(D1):D831-D847. doi: 10.1093/nar/gkaa793. PMID: 33037820; PMCID: PMC7778977.
+
+- Cantarel BL, Coutinho PM, Rancurel C, Bernard T, Lombard V, Henrissat B. The Carbohydrate-Active EnZymes database (CAZy): an expert resource for Glycogenomics. Nucleic Acids Res. 2009 Jan;37(Database issue):D233-8. doi: 10.1093/nar/gkn663. Epub 2008 Oct 5. PMID: 18838391; PMCID: PMC2686590.
+
+- Szklarczyk, Damian, Rebecca Kirsch, Mikaela Koutrouli, Katerina Nastou, Farrokh Mehryary, Radja Hachilif, Annika L. Gable, et al. “The STRING Database in 2023: Protein-Protein Association Networks and Functional Enrichment Analyses for Any Sequenced Genome of Interest.” Nucleic Acids Research 51, no. D1 (January 6, 2023): D638–46. https://doi.org/10.1093/nar/gkac1000.
 
 ## License
 
