@@ -8,7 +8,9 @@ services:
       - "7474:7474"
       - "7687:7687"
     volumes:
-      - ./graph_data:/var/lib/neo4j/import       # Map host ./graph_data folder to container import directory
+      - ./graph_data:/var/lib/neo4j/graph_data       # Map host ./graph_data folder to container import directory
+      - ./stringDB:/var/lib/neo4j/stringDB       
+      - ./bfx_databases:/var/lib/neo4j/bfx_databases       
       - ./conf:/var/lib/neo4j/conf         # Optional custom config directory
       - neo4j-data:/data                   # Persistent data storage
     environment:

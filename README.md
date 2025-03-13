@@ -249,6 +249,10 @@ docker exec -i glycoproteomics-graph-tool cypher-shell -u neo4j -p your_password
       - NEO4J_AUTH=neo4j/your_password  # Set username and password
 ```
 
+## Docker Terminal Access
+
+docker exec -it glycoproteomics-graph-tool bash
+
 # Reference Source Materials 
 
 - Neo4j Graph Databases: [Link](https://neo4j.com/)

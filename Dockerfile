@@ -11,7 +11,9 @@ ENV NEO4J_dbms_memory_heap_max__size=4G
 ENV NEO4J_dbms_memory_pagecache_size=2G
 
 # Copy your CSV files into the Neo4j import folder
-COPY graph_data /var/lib/neo4j/import
+COPY graph_data /var/lib/neo4j/graph_data
+COPY stringDB /var/lib/neo4j/stringDB
+COPY stringDB /var/lib/neo4j/bfx_databases
 
 # (Optional) Copy your custom configuration if not using environment variables
 # COPY neo4j.config /var/lib/neo4j/conf/neo4j.conf

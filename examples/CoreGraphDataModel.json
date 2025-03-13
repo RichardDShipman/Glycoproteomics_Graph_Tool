@@ -56,8 +56,8 @@
     {
       "id": "n0",
       "position": {
-        "x": -197.59891425106315,
-        "y": -172.30951842990697
+        "x": 136.5868698300999,
+        "y": -272.1125293481689
       },
       "caption": "Organism",
       "labels": [
@@ -71,8 +71,8 @@
     {
       "id": "n1",
       "position": {
-        "x": -320.2017243705617,
-        "y": 40.04477784778433
+        "x": -78.44480348275333,
+        "y": -241.35501420279687
       },
       "caption": "Gene",
       "labels": [
@@ -86,8 +86,8 @@
     {
       "id": "n3",
       "position": {
-        "x": -34.89875126773419,
-        "y": 40.78303422835148
+        "x": -15.298587770246982,
+        "y": 51.326269975191686
       },
       "caption": "Protein",
       "labels": [
@@ -101,8 +101,8 @@
     {
       "id": "n4",
       "position": {
-        "x": 560.6023743367906,
-        "y": 40.04477784778613
+        "x": 812.3497348122951,
+        "y": -31.1098201899133
       },
       "caption": "Glycan",
       "labels": [
@@ -116,8 +116,8 @@
     {
       "id": "n5",
       "position": {
-        "x": 195.91436912474865,
-        "y": 440.5630858016437
+        "x": 377.2506865316342,
+        "y": 403.9892280907477
       },
       "caption": "Enzyme",
       "labels": [
@@ -131,8 +131,8 @@
     {
       "id": "n6",
       "position": {
-        "x": 195.91436912474865,
-        "y": 174.04305141944894
+        "x": 430.9453019954795,
+        "y": 108.10347535874843
       },
       "caption": "Site",
       "labels": [
@@ -146,8 +146,8 @@
     {
       "id": "n7",
       "position": {
-        "x": 674.5238462870154,
-        "y": 237.36255533860745
+        "x": 812.3497348122951,
+        "y": 296.6088453348256
       },
       "caption": "Motif",
       "labels": [
@@ -161,8 +161,8 @@
     {
       "id": "n8",
       "position": {
-        "x": 195.91436912474865,
-        "y": -191.19457506474976
+        "x": 353.96694774206975,
+        "y": -272.1125293481689
       },
       "caption": "Glycoconjugate",
       "labels": [
@@ -176,8 +176,8 @@
     {
       "id": "n9",
       "position": {
-        "x": 437.04249524398864,
-        "y": 299.57449283551796
+        "x": 651.2692080039573,
+        "y": 296.6088453348256
       },
       "caption": "Monosaccharide",
       "labels": [
@@ -189,151 +189,301 @@
     {
       "id": "n10",
       "position": {
-        "x": -197.59891425106315,
-        "y": 299.57449283551796
+        "x": -236.1698529919539,
+        "y": -209.52503187864534
       },
       "caption": "GeneOntology",
-      "style": {},
       "labels": [
         "GeneOntology"
       ],
       "properties": {
         "go_term_id": ""
+      },
+      "style": {}
+    },
+    {
+      "id": "n11",
+      "position": {
+        "x": 571.3470256540396,
+        "y": -272.1125293481689
+      },
+      "caption": "Citation",
+      "labels": [
+        "Citation"
+      ],
+      "properties": {
+        "title": ""
+      },
+      "style": {}
+    },
+    {
+      "id": "n12",
+      "position": {
+        "x": -278.76979380393186,
+        "y": 265.4492923803198
+      },
+      "caption": "DOID",
+      "style": {},
+      "labels": [
+        "DOID"
+      ],
+      "properties": {
+        "doid_id": ""
+      }
+    },
+    {
+      "id": "n13",
+      "position": {
+        "x": -159.61035437806572,
+        "y": 358.6369582879835
+      },
+      "caption": "MONDO",
+      "style": {},
+      "labels": [
+        "MONDO"
+      ],
+      "properties": {
+        "mondo_id": ""
+      }
+    },
+    {
+      "id": "n14",
+      "position": {
+        "x": 14.273389821848633,
+        "y": 389.5440153317061
+      },
+      "caption": "MIM",
+      "style": {},
+      "labels": [
+        "MIM"
+      ],
+      "properties": {
+        "mim_id": ""
+      }
+    },
+    {
+      "id": "n15",
+      "position": {
+        "x": -338.7373870936075,
+        "y": -100.55918762515518
+      },
+      "caption": "ConservedDomain",
+      "style": {},
+      "labels": [
+        "ConservedDomain"
+      ],
+      "properties": {
+        "cdd_id": ""
+      }
+    },
+    {
+      "id": "n16",
+      "position": {
+        "x": 172.66243978234093,
+        "y": 334.05652526126244
+      },
+      "caption": "Bgee",
+      "style": {},
+      "labels": [
+        "Bgee"
+      ],
+      "properties": {
+        "bgee_id": ""
+      }
+    },
+    {
+      "id": "n17",
+      "position": {
+        "x": 291.8322433510074,
+        "y": -31.1098201899133
+      },
+      "caption": "Glycotransferase",
+      "style": {},
+      "labels": [
+        "Glycotransferase"
+      ],
+      "properties": {
+        "uniprotkb_canonical_ac": ""
+      }
+    },
+    {
+      "id": "n18",
+      "position": {
+        "x": 255.72191408342928,
+        "y": 178.5963223907869
+      },
+      "caption": "Glycohydrolase",
+      "style": {},
+      "labels": [
+        "Glycohydrolase"
+      ],
+      "properties": {
+        "uniprotkb_canonical_ac": ""
+      }
+    },
+    {
+      "id": "n19",
+      "position": {
+        "x": -369.76694214019955,
+        "y": 6.225994050741555
+      },
+      "caption": "UBERONAnatomical",
+      "style": {},
+      "labels": [
+        "UBERONAnatomical"
+      ],
+      "properties": {
+        "uberon_anatomical_id": ""
+      }
+    },
+    {
+      "id": "n20",
+      "position": {
+        "x": -360.40943385292564,
+        "y": 143.95646512937194
+      },
+      "caption": "UBERONDevelopmental",
+      "style": {},
+      "labels": [
+        "UBERONDevelopmental"
+      ],
+      "properties": {
+        "uberon_anatomical_id": ""
       }
     }
   ],
   "relationships": [
     {
       "id": "n0",
-      "fromId": "n0",
-      "toId": "n1",
-      "type": "has",
+      "type": "HAS",
+      "style": {},
       "properties": {},
-      "style": {}
+      "fromId": "n0",
+      "toId": "n1"
     },
     {
       "id": "n3",
-      "fromId": "n0",
-      "toId": "n4",
-      "type": "has",
+      "type": "HAS",
+      "style": {},
       "properties": {},
-      "style": {}
+      "fromId": "n0",
+      "toId": "n4"
     },
     {
       "id": "n4",
-      "fromId": "n1",
-      "toId": "n3",
-      "type": "encodes",
+      "type": "ENCODES",
+      "style": {},
       "properties": {},
-      "style": {}
+      "fromId": "n1",
+      "toId": "n3"
     },
     {
       "id": "n5",
-      "fromId": "n0",
-      "toId": "n3",
-      "type": "has",
+      "type": "HAS",
+      "style": {},
       "properties": {},
-      "style": {}
+      "fromId": "n0",
+      "toId": "n3"
     },
     {
       "id": "n6",
-      "fromId": "n3",
-      "toId": "n4",
-      "type": "binding",
+      "type": "BINDS_TO",
+      "style": {},
       "properties": {},
-      "style": {}
+      "fromId": "n3",
+      "toId": "n4"
     },
     {
       "id": "n7",
-      "fromId": "n3",
-      "toId": "n5",
-      "type": "is_a",
+      "type": "FUNCTIONS_AS",
+      "style": {},
       "properties": {},
-      "style": {}
+      "fromId": "n3",
+      "toId": "n5"
     },
     {
       "id": "n8",
-      "fromId": "n3",
-      "toId": "n6",
-      "type": "has",
+      "type": "HAS",
+      "style": {},
       "properties": {},
-      "style": {}
+      "fromId": "n3",
+      "toId": "n6"
     },
     {
       "id": "n9",
-      "fromId": "n5",
-      "toId": "n4",
-      "type": "synthesizes",
+      "type": "SYNTHESIZES",
+      "style": {},
       "properties": {},
-      "style": {}
+      "fromId": "n5",
+      "toId": "n4"
     },
     {
       "id": "n10",
-      "fromId": "n6",
-      "toId": "n4",
-      "type": "has",
+      "type": "HAS",
+      "style": {},
       "properties": {},
-      "style": {}
+      "fromId": "n6",
+      "toId": "n4"
     },
     {
       "id": "n11",
-      "fromId": "n4",
-      "toId": "n7",
-      "type": "has",
+      "type": "CONTAINS",
+      "style": {},
       "properties": {},
-      "style": {}
+      "fromId": "n4",
+      "toId": "n7"
     },
     {
       "id": "n12",
-      "fromId": "n8",
-      "toId": "n4",
-      "type": "has",
+      "type": "HAS",
+      "style": {},
       "properties": {},
-      "style": {}
+      "fromId": "n8",
+      "toId": "n4"
     },
     {
       "id": "n13",
-      "fromId": "n8",
-      "toId": "n6",
-      "type": "has",
+      "type": "HAS",
+      "style": {},
       "properties": {},
-      "style": {}
+      "fromId": "n8",
+      "toId": "n6"
     },
     {
       "id": "n14",
-      "fromId": "n8",
-      "toId": "n3",
-      "type": "has",
+      "type": "HAS",
+      "style": {},
       "properties": {},
-      "style": {}
+      "fromId": "n8",
+      "toId": "n3"
     },
     {
       "id": "n15",
-      "fromId": "n4",
-      "toId": "n4",
-      "type": "has",
+      "type": "HAS_TOPOLOGY",
+      "style": {},
       "properties": {},
-      "style": {}
+      "fromId": "n4",
+      "toId": "n4"
     },
     {
       "id": "n16",
-      "fromId": "n4",
-      "toId": "n9",
-      "type": "has_structure",
+      "type": "HAS_LINKAGE",
+      "style": {},
       "properties": {},
-      "style": {}
+      "fromId": "n4",
+      "toId": "n9"
     },
     {
       "id": "n17",
-      "fromId": "n9",
-      "toId": "n9",
-      "type": "linkage",
+      "type": "LINKAGE",
+      "style": {},
       "properties": {},
-      "style": {}
+      "fromId": "n9",
+      "toId": "n9"
     },
     {
       "id": "n18",
-      "type": "located_in",
+      "type": "LOCATED_IN",
       "style": {},
       "properties": {},
       "fromId": "n3",
@@ -341,7 +491,7 @@
     },
     {
       "id": "n19",
-      "type": "functions_as",
+      "type": "HAS_FUNCTION",
       "style": {},
       "properties": {},
       "fromId": "n3",
@@ -349,11 +499,123 @@
     },
     {
       "id": "n20",
-      "type": "involved_in",
+      "type": "INVOLVED_IN",
       "style": {},
       "properties": {},
       "fromId": "n3",
       "toId": "n10"
+    },
+    {
+      "id": "n21",
+      "type": "REFERENCED_IN",
+      "style": {},
+      "properties": {},
+      "fromId": "n4",
+      "toId": "n11"
+    },
+    {
+      "id": "n22",
+      "type": "REFERENCED_IN",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n11"
+    },
+    {
+      "id": "n23",
+      "type": "ASSOCIATED_WITH",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n12"
+    },
+    {
+      "id": "n24",
+      "type": "ASSOCIATED_WITH",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n13"
+    },
+    {
+      "id": "n25",
+      "type": "ASSOCIATED_WITH",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n14"
+    },
+    {
+      "id": "n26",
+      "type": "HAS_BASE_COMPOSITION",
+      "style": {},
+      "properties": {},
+      "fromId": "n4",
+      "toId": "n4"
+    },
+    {
+      "id": "n27",
+      "type": "HAS_COMPOSITION",
+      "style": {},
+      "properties": {},
+      "fromId": "n4",
+      "toId": "n4"
+    },
+    {
+      "id": "n28",
+      "type": "HAS_SACCHARIDE",
+      "style": {},
+      "properties": {},
+      "fromId": "n4",
+      "toId": "n4"
+    },
+    {
+      "id": "n29",
+      "type": "CONTAINS",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n15"
+    },
+    {
+      "id": "n30",
+      "type": "EXPRESSED_IN",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n16"
+    },
+    {
+      "id": "n31",
+      "type": "IS_A",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n17"
+    },
+    {
+      "id": "n32",
+      "type": "IS_A",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n18"
+    },
+    {
+      "id": "n33",
+      "type": "ASSOCIATED_WITH",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n19"
+    },
+    {
+      "id": "n34",
+      "type": "ASSOCIATED_WITH",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n20"
     }
   ]
 }
