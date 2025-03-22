@@ -524,6 +524,62 @@ ON MATCH SET
     r1.glycan_xref_key = row.glycan_xref_key,
     r1.composition = row.composition;
 
+
+// EMBL GLYCOCONJUGATES
+
+LOAD CSV WITH HEADERS FROM 'file:///var/lib/neo4j/graph_data/human_proteoform_glycosylation_sites_embl.csv' AS row
+MERGE (n:Glycoconjugate {glycoconjugate_sequence: row.uniprotkb_canonical_ac + '-' + row.glycosylation_site_uniprotkb + '-' + row.composition})
+ON CREATE SET
+    n.uniprotkb_canonical_ac = row.uniprotkb_canonical_ac,
+    n.glycosylation_site = row.glycosylation_site_uniprotkb,
+    n.source = 'human_proteoform_glycosylation_sites_embl',
+    n.saccharide = row.saccharide,
+    n.composition = row.composition,
+    n.site_seq = row.site_seq,
+    n.source_glycan_type = row.source_glycan_type
+ON MATCH SET
+    n.uniprotkb_canonical_ac = row.uniprotkb_canonical_ac,
+    n.glycosylation_site = row.glycosylation_site,
+    n.source = 'human_proteoform_glycosylation_sites_embl,
+    n.saccharide = row.saccharide',
+    n.composition = row.composition,
+    n.site_seq = row.site_seq,
+    n.source_glycan_type = row.source_glycan_type;
+
+LOAD CSV WITH HEADERS FROM 'file:///var/lib/neo4j/graph_data/human_proteoform_glycosylation_sites_embl.csv' AS row 
+MATCH (n1:GlycosylationSite {protein_glycosylation_site: row.uniprotkb_canonical_ac + '-' + row.glycosylation_site_uniprotkb})
+MATCH (n2:Glycoconjugate {glycoconjugate_sequence: row.uniprotkb_canonical_ac + '-' + row.glycosylation_site_uniprotkb + '-' + row.composition})
+MERGE (n1)<-[r1:HAS]-(n2)
+ON CREATE SET
+    r1.glycan_xref_key = row.glycan_xref_key,
+    r1.composition = row.composition
+ON MATCH SET
+    r1.glycan_xref_key = row.glycan_xref_key,
+    r1.composition = row.composition;
+
+LOAD CSV WITH HEADERS FROM 'file:///var/lib/neo4j/graph_data/human_proteoform_glycosylation_sites_embl.csv' AS row 
+MATCH (n1:Glycoconjugate {glycoconjugate_sequence: row.uniprotkb_canonical_ac + '-' + row.glycosylation_site_uniprotkb + '-' + row.composition})
+MATCH (n2:Glycan {glytoucan_ac: row.saccharide})
+MERGE (n1)-[r1:HAS]->(n2)
+ON CREATE SET
+    r1.glycan_xref_key = row.glycan_xref_key,
+    r1.composition = row.composition
+ON MATCH SET
+    r1.glycan_xref_key = row.glycan_xref_key,
+    r1.composition = row.composition;
+
+LOAD CSV WITH HEADERS FROM 'file:///var/lib/neo4j/graph_data/human_proteoform_glycosylation_sites_embl.csv' AS row 
+MATCH (n1:GlycosylationSite {protein_glycosylation_site: row.uniprotkb_canonical_ac + '-' + row.glycosylation_site_uniprotkb})
+MATCH (n2:Protein {uniprotkb_canonical_ac: row.uniprotkb_canonical_ac})
+MERGE (n1)-[r1:HAS]->(n2)
+ON CREATE SET
+    r1.glycan_xref_key = row.glycan_xref_key,
+    r1.composition = row.composition
+ON MATCH SET
+    r1.glycan_xref_key = row.glycan_xref_key,
+    r1.composition = row.composition;
+
+
 // GO - GENE ONTOLOGY NODES AND RELATIONSHIPS
 
 LOAD CSV WITH HEADERS FROM 'file:///var/lib/neo4j/graph_data/human_protein_go_annotation.csv' AS row

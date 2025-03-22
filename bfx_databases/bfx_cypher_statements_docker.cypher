@@ -14,6 +14,11 @@ CREATE CONSTRAINT IF NOT EXISTS FOR (bg:Bgee) REQUIRE bg.bgee_id IS UNIQUE;
 
 CREATE CONSTRAINT IF NOT EXISTS FOR (cdd:ConservedDomain) REQUIRE cdd.cdd_id IS UNIQUE;
 
+
+CREATE CONSTRAINT IF NOT EXISTS FOR (path:Pathway) REQUIRE path.reactome_id IS UNIQUE;
+
+CREATE CONSTRAINT IF NOT EXISTS FOR (pfam:ProteinFamily) REQUIRE pfam.pfam_id IS UNIQUE;
+
 // DISEASE DATABASE NODES AND RELATIONSHIPS
 
 LOAD CSV WITH HEADERS FROM 'file:///var/lib/neo4j/bfx_databases/human_protein_disease_uniprotkb.csv' AS row
@@ -171,3 +176,67 @@ ON CREATE SET
     r1.cdd_label = row.xref_label
 ON MATCH SET
     r1.cdd_label = row.xref_label;
+
+
+// REACTION PATHWAY NODES AND RELATIONSHIPS
+
+// HUMAN PROTEINS
+
+LOAD CSV WITH HEADERS FROM 'file:///var/lib/neo4j/bfx_databases/human_protein_xref_reactome.csv' AS row
+WITH row WHERE row.xref_id IS NOT NULL 
+MERGE (n:Pathway {reactome_id: row.xref_id})
+ON CREATE SET
+    n.reactome_label = row.xref_label
+ON MATCH SET
+    n.reactome_label = row.xref_label;
+
+LOAD CSV WITH HEADERS FROM 'file:///var/lib/neo4j/bfx_databases/human_protein_xref_reactome.csv' AS row 
+WITH row 
+WHERE row.xref_id IS NOT NULL
+MATCH (n1:Protein {uniprotkb_canonical_ac: row.uniprotkb_canonical_ac})
+MATCH (n2:Pathway {reactome_id: row.xref_id})
+MERGE (n1)-[r1:INVOLVED_IN]->(n2);
+
+// GLYCAN REACTOME
+
+LOAD CSV WITH HEADERS FROM 'file:///var/lib/neo4j/bfx_databases/glycan_pathway_reactome.csv' AS row
+WITH row WHERE row.reactome_pathway_id IS NOT NULL 
+MERGE (n:Pathway {reactome_id: row.reactome_pathway_id})
+ON CREATE SET
+    n.reactome_label = row.pathway_name,
+    n.compound_name = row.compound_name
+ON MATCH SET
+    n.reactome_label = row.pathway_name,
+    n.compound_name = row.compound_name;
+
+
+LOAD CSV WITH HEADERS FROM 'file:///var/lib/neo4j/bfx_databases/glycan_pathway_reactome.csv' AS row 
+WITH row 
+WHERE row.reactome_pathway_id IS NOT NULL
+MATCH (n1:Glycan {glytoucan_ac: row.glytoucan_ac})
+MATCH (n2:Pathway {reactome_id: row.reactome_pathway_id})
+MERGE (n1)-[r1:INVOLVED_IN]->(n2);
+
+
+
+
+
+
+
+// PROTEIN FAMILY NODES AND RELATIONSHIPS
+
+LOAD CSV WITH HEADERS FROM 'file:///var/lib/neo4j/bfx_databases/human_protein_xref_pfam.csv' AS row
+WITH row WHERE row.xref_id IS NOT NULL 
+MERGE (n:ProteinFamily {pfam_id: row.xref_id})
+ON CREATE SET
+    n.pfam_label = row.xref_label
+ON MATCH SET
+    n.pfam_label = row.xref_label;
+
+LOAD CSV WITH HEADERS FROM 'file:///var/lib/neo4j/bfx_databases/human_protein_xref_pfam.csv' AS row 
+WITH row 
+WHERE row.xref_id IS NOT NULL
+MATCH (n1:Protein {uniprotkb_canonical_ac: row.uniprotkb_canonical_ac})
+MATCH (n2:ProteinFamily {pfam_id: row.xref_id})
+MERGE (n1)-[r1:BELONGS_TO]->(n2);
+

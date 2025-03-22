@@ -258,7 +258,11 @@ docker exec -it glycoproteomics-graph-tool bash
 
 # Reference Source Materials 
 
+Graph database management software:
+
 - Neo4j Graph Databases: [Link](https://neo4j.com/)
+
+Data sources:
 
 - GlyGen: Computational and Informatics Resources for Glycoscience, Glycobiology, Volume 30, Issue 2, February 2020, Pages 72–73, https://doi.org/10.1093/glycob/cwz080
 
@@ -281,6 +285,9 @@ docker exec -it glycoproteomics-graph-tool bash
 - Cantarel BL, Coutinho PM, Rancurel C, Bernard T, Lombard V, Henrissat B. The Carbohydrate-Active EnZymes database (CAZy): an expert resource for Glycogenomics. Nucleic Acids Res. 2009 Jan;37(Database issue):D233-8. doi: 10.1093/nar/gkn663. Epub 2008 Oct 5. PMID: 18838391; PMCID: PMC2686590.
 
 - Szklarczyk, Damian, Rebecca Kirsch, Mikaela Koutrouli, Katerina Nastou, Farrokh Mehryary, Radja Hachilif, Annika L. Gable, et al. “The STRING Database in 2023: Protein-Protein Association Networks and Functional Enrichment Analyses for Any Sequenced Genome of Interest.” Nucleic Acids Research 51, no. D1 (January 6, 2023): D638–46. https://doi.org/10.1093/nar/gkac1000.
+
+- Fabregat, Antonio, Konstantinos Sidiropoulos, Guilherme Viteri, Oscar Forner, Pablo Marin-Garcia, Vicente Arnau, Peter D’Eustachio, Lincoln Stein, and Henning Hermjakob. “Reactome Pathway Analysis: A High-Performance in-Memory Approach.” BMC Bioinformatics 18, no. 1 (March 2, 2017): 142. https://doi.org/10.1186/s12859-017-1559-2.
+
 
 ## License
 
