@@ -1,11 +1,11 @@
 
 data/.DS_Store
 .DS_Store
-/graph_data/h*
-/graph_data/m*
-/graph_data/g*
-/stringDB/96*
-/stringDB/10*
-/stringDB/m*
-/bfx_databases/h*
-/bfx_databases/g*
+/data/graph_data/h*
+/data/graph_data/m*
+/data/graph_data/g*
+/data/stringDB/96*
+/data/stringDB/10*
+/data/stringDB/m*
+/data/bfx_databases/h*
+/data/bfx_databases/g*
